@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sopa de letras</title>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="wordfind.js"></script> 
+    <script type="text/javascript" src="wordfindgame.js"></script> 
+</head>
+<body>
+
+    <div id='juego'></div>
+    <div id='Palabras'></div>
+    
+    <div><button id='Resolver'>Resolver Sopa de Letras</button></div>
+    <script>
+    var Palabras = ['Leon','Oso','Armadillo','Pantera','Perro','Gato'];
+    var JuegoSopa = wordfindgame.create(Palabras, '#juego', '#Palabras'); 
+        
+    var puzzle = wordfind.newPuzzle(Palabras,{height: 18, width:18, fillBlanks: false});
+    wordfind.print(puzzle);   
+        
+    $('#Resolver').click( function() {wordfindgame.solve(JuegoSopa, Palabras);});
+        
+    </script>
+    
+</body>
+</html>
